@@ -150,8 +150,8 @@ function _startMatching(self) {
  */
 function _teamMatching(self) {
     let idQueue = self.teamQueue, contestants = self.contestants, fighterNum = self.fighterNum / 2;
-    let maxProduction = Math.min(idQueue.length - 1 || self.maxProduction);
-    let maxSearch = Math.min(idQueue.length - 1 || self.maxSearch);
+    let maxProduction = Math.min(idQueue.length - 1, self.maxProduction);
+    let maxSearch = Math.min(idQueue.length - 1, self.maxSearch);
 
     for (let i = 0; i < maxProduction; i++) {
         let outIdArr = _matchingOnce(self, idQueue, maxSearch, 2, self.teamMastTeam);
@@ -195,8 +195,8 @@ function _teamMatching(self) {
  */
 function _singleMatching(self) {
     let idQueue = self.singleQueue, contestants = self.contestants, fighterNum = self.fighterNum;
-    let maxProduction = Math.min(idQueue.length - 1|| self.maxProduction);
-    let maxSearch = Math.min(idQueue.length - 1 || self.maxSearch);
+    let maxProduction = Math.min(idQueue.length - 1, self.maxProduction);
+    let maxSearch = Math.min(idQueue.length - 1, self.maxSearch);
     for (let i = 0; i < maxProduction; i++) {
         let outIdArr = _matchingOnce(self, idQueue, maxSearch, fighterNum, 0);
         if (!outIdArr)
